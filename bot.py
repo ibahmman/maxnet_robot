@@ -1,8 +1,12 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+import requests
 
+api_url = 'http://127.0.0.1:8000/api/v2/product/v2r/'
 
-async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def products(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    response = requests.get(api_url).json()
+    print(response)
     await update.message.reply_text(f'Hello {update.effective_user.first_name}')
 
 
