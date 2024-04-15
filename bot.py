@@ -10,7 +10,7 @@ async def products(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print(response)
     for i in response:
         await update.message.reply_text(
-            f'''
+            f'''{i['name']}
             {i['traffic']} گیگابایت
             {i['expire_month']} ماهه
             {i['price_amount']} تومان
