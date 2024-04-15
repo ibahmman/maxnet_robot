@@ -12,6 +12,6 @@ async def products(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 app = ApplicationBuilder().token("6392235672:AAElUj6EbqrPBWGdDDdhfBEvoe7SJFe1maA").build()
 
-app.add_handler(CommandHandler("hello", hello))
+app.add_handler(CommandHandler("products", products))
 
 app.run_polling()
