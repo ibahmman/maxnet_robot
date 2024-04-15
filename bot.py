@@ -9,7 +9,13 @@ async def products(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     response = requests.get(api_url, headers={'content-type': 'application/json'}).json()
     print(response)
     for i in response:
-        await update.message.reply_text(f'{i}')
+        await update.message.reply_text(
+            f'''
+            {i['traffic']} گیگابایت
+            {i['expire_month']} ماهه
+            {i['price_amount']} تومان
+            '''
+            )
 
 
 app = ApplicationBuilder().token("6392235672:AAElUj6EbqrPBWGdDDdhfBEvoe7SJFe1maA").build()
